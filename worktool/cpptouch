@@ -1,17 +1,19 @@
 #!/usr/bin/sh
 
-text="#include <iostream>\n\
-#include <string>\n\
-#include <stdio.h>\n\
-#include <cstring>\n\
-#include <unistd.h>\n\
-#include <cstdlib>\n\
-using namespace std;\n\
-\n\
-int main() {\n\
-\n\
-\n\
-\treturn 0;\n\
-}"
+echo \
+'/* This file is auto-generated.Edit it at your own peril.*/
+#include <iostream>
+#include <string>
+#include <stdio.h>
+#include <cstring>
+#include <unistd.h>
+#include <cstdlib>
+using namespace std;
 
-echo -e $text >$1
+int main() {
+
+
+    return 0;
+}
+' >$1
+
