@@ -13,7 +13,7 @@ public:
     void reloadCofing();
 
 private:
-    void _loadConfig();
+    void loadConfig();
     bool isTagOn(string tag);
     
 private:
@@ -22,6 +22,8 @@ private:
     set<string> _debug_tags;
     bool _debug_switch;
     bool _threadsafe;
+    int _signal;
     FILE *_file;
+    dictionary *_dict;
     pthread_mutex_t _mutex;
 };
