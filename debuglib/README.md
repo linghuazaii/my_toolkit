@@ -13,7 +13,10 @@ C++11 regex,so I use sscanf("%[^]%*n") to do simple regex.I learn this trick fro
 
 ####_usage_
 You can learn how to config Debug++ in [debug.ini](https://github.com/linghuazaii/my_toolkit/blob/master/debuglib/conf/debug.ini)  
-Also there is an little example in [test.cpp](https://github.com/linghuazaii/my_toolkit/blob/master/debuglib/test/test.cpp) 
+Also there is an little example in [test.cpp](https://github.com/linghuazaii/my_toolkit/blob/master/debuglib/test/test.cpp)   
+You should include `debug++.h` in your project, and don't forget to copy `iniparser.h dictionary.h` to you include directory,  
+and also copy `libdebug++.so libiniparser.so` to your lib directory.  
+You can check [Makefile:the test part](https://github.com/linghuazaii/my_toolkit/blob/master/debuglib/Makefile) to see how to compile debug++ with your project. 
 
 Use  `git clone https://github.com/linghuazaii/my_toolkit.git` to clone Debug++.  
 Then `cd my_toolkit/debuglib`.  
