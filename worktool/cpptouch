@@ -8,6 +8,13 @@ echo \
 #include <cstring>
 #include <unistd.h>
 #include <cstdlib>
+#include <vector>
+#include <set>
+#include <map>
+#include <termios.h>
+#include <inttypes.h>
+#include <errno.h>
+#include <algorithm>
 using namespace std;
 
 int main() {
