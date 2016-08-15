@@ -31,6 +31,7 @@ using std::set;
  */
 #define DEBUG(fmt, ...) \
     do { \
+        extern DebugTool g_debugtool; \
         if (g_debugtool.started && g_debugtool.debug_switch) { \
             char buf[1024] = {0}; \
             char timebuf[128] = {0}; \
@@ -47,6 +48,7 @@ using std::set;
  */
 #define TDEBUG(tag, fmt, ...) \
     do { \
+        extern DebugTool g_debugtool; \
         if (g_debugtool.isTagOn(tag)) { \
             if (g_debugtool.started && g_debugtool.debug_switch) { \
                 char buf[1024] = {0}; \
