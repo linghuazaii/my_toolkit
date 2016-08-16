@@ -3,6 +3,7 @@
  * Debug library for C++ projects.
  * 2016-7-27 Charles 
  * temparary email: lsh@kloudpeak.com
+ * github: https://github.com/linghuazaii/my_toolkit/tree/master/debuglib
  */
 #include <iostream>
 #include <set>
