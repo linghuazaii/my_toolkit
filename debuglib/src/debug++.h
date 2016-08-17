@@ -3,6 +3,7 @@
  * Debug library for C++ projects.
  * 2016-7-27 Charles 
  * temparary email: lsh@kloudpeak.com
+ * github: https://github.com/linghuazaii/my_toolkit/tree/master/debuglib
  */
 #include <iostream>
 #include <set>
@@ -33,6 +34,7 @@ using std::set;
  */
 #define DEBUG(fmt, ...) \
     do { \
+        extern DebugTool g_debugtool; \
         if (g_debugtool.started && g_debugtool.debug_switch) { \
             char buf[DEBUG_BUF_SIZE] = {0}; \
             char timebuf[128] = {0}; \
@@ -49,6 +51,7 @@ using std::set;
  */
 #define TDEBUG(tag, fmt, ...) \
     do { \
+        extern DebugTool g_debugtool; \
         if (g_debugtool.isTagOn(tag)) { \
             if (g_debugtool.started && g_debugtool.debug_switch) { \
                 char buf[DEBUG_BUF_SIZE] = {0}; \
