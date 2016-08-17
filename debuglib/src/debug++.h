@@ -14,6 +14,8 @@
 using std::string;
 using std::set;
 
+#define DEBUG_BUF_SIZE 8192
+
 #define DEBUG_START(config_file) \
     void debugtool_reload_config(int) { \
         extern DebugTool g_debugtool; \
@@ -32,12 +34,12 @@ using std::set;
 #define DEBUG(fmt, ...) \
     do { \
         if (g_debugtool.started && g_debugtool.debug_switch) { \
-            char buf[1024] = {0}; \
+            char buf[DEBUG_BUF_SIZE] = {0}; \
             char timebuf[128] = {0}; \
             time_t now = time(0); \
             struct tm *tm_now = localtime(&now); \
             strftime(timebuf, 128, "[ %Y-%m-%d %H:%M:%S ]", tm_now); \
-            snprintf(buf, 1024, "%s [%s:%d] [%s] " fmt "\n", timebuf, __FILE__, __LINE__, __FUNCTION__, ##__VA_ARGS__); \
+            snprintf(buf, DEBUG_BUF_SIZE, "%s [%s:%d] [%s] " fmt "\n", timebuf, __FILE__, __LINE__, __FUNCTION__, ##__VA_ARGS__); \
             g_debugtool.printDebugInfo(buf); \
         } \
     } while (0)
@@ -49,12 +51,12 @@ using std::set;
     do { \
         if (g_debugtool.isTagOn(tag)) { \
             if (g_debugtool.started && g_debugtool.debug_switch) { \
-                char buf[1024] = {0}; \
+                char buf[DEBUG_BUF_SIZE] = {0}; \
                 char timebuf[128] = {0}; \
                 time_t now = time(0); \
                 struct tm *tm_now = localtime(&now); \
                 strftime(timebuf, 128, "[ %Y-%m-%d %H:%M:%S ]", tm_now); \
-                snprintf(buf, 1024, "%s [%s:%d] [%s] [%s] " fmt "\n", timebuf, __FILE__, __LINE__, __FUNCTION__, tag, ##__VA_ARGS__); \
+                snprintf(buf, DEBUG_BUF_SIZE, "%s [%s:%d] [%s] [%s] " fmt "\n", timebuf, __FILE__, __LINE__, __FUNCTION__, tag, ##__VA_ARGS__); \
                 g_debugtool.printDebugInfo(buf); \
             } \
         } \
