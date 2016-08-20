@@ -1,0 +1,24 @@
+" vim settings
+set nu
+set tabstop=4
+set hlsearch
+set bg=dark
+set autoindent
+set backspace=2
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set cindent
+set mouse=a
+set incsearch
+set hlsearch
+inoremap [ []<ESC>i
+inoremap { {}<ESC>i<CR><UP><END><CR>
+inoremap " ""<ESC>i
+inoremap ' ''<ESC>i
+inoremap ( ()<ESC>i
+inoremap ] <right>
+
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+set termencoding=utf-8
+set encoding=utf-8
