@@ -1,13 +1,9 @@
 #!/usr/bin/sh
 
-python_path=`which python`
-
 echo \
-'#!'$python_path >$1
-
-echo \
-'# -*- coding: utf-8 -*-
+'#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 # This file is auto-generated.Edit it at your own peril.
-' >>$1
+' >$1
 
 chmod +x $1
