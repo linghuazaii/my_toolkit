@@ -15,9 +15,12 @@ echo \
 #include <inttypes.h>
 #include <errno.h>
 #include <algorithm>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 using namespace std;
 
-int main() {
+int main(int argc, char **argv) {
 
 
     return 0;
