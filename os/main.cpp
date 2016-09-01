@@ -16,18 +16,18 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include "os_file.h"
+#include "os_error.h"
+#include "os_alloc.h"
+#include "os_io.h"
 using namespace std;
 
 int main(int argc, char **argv) {
-    int fd = os_open_w("log", true);
-    const char *name = "I am Charles";
-    const char *nothing = "to overwrite";
-
-    write(fd, name, strlen(name));
-    os_close(fd);
-    fd = os_open_a("log");
-    write(fd, nothing, strlen(nothing));
-    os_close(fd);
+    int fd = os_open_r("log");
+    void *buf;
+    int n;
+    while ((n = os_read(fd, buf, OS_PAGE))) {
+        cout<<(char *)buf;
+    }
 
     return 0;
 }
