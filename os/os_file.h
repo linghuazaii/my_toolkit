@@ -12,5 +12,6 @@ int os_open_r(const char *pathname, bool create_flag = false, int extra_flags = 
 int os_open_w(const char *pathname, bool create_flag = false, int extra_flags = O_WRONLY);
 int os_open_rw(const char *pathname, bool create_flag = false, int extra_flags = O_RDWR);
 int os_open_a(const char *pathname, bool create_flag = false, int extra_flags = O_APPEND);
+int os_close(int fd);
 
 #endif

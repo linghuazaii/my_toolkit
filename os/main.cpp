@@ -19,10 +19,15 @@
 using namespace std;
 
 int main(int argc, char **argv) {
-    cout<<os_open_r("log", true)<<endl;
-    cout<<os_open_w("log")<<endl;
-    cout<<os_open_rw("log")<<endl;
-    cout<<os_open_a("log")<<endl;
+    int fd = os_open_w("log", true);
+    const char *name = "I am Charles";
+    const char *nothing = "to overwrite";
+
+    write(fd, name, strlen(name));
+    os_close(fd);
+    fd = os_open_a("log");
+    write(fd, nothing, strlen(nothing));
+    os_close(fd);
 
     return 0;
 }
