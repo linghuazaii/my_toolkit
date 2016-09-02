@@ -6,6 +6,8 @@
  */
 #include <unistd.h>
 
-size_t os_read(int fd, void *&buf, size_t nbyte);
+ssize_t os_read(int fd, void *&buf, size_t nbyte);
+ssize_t os_write(int fd, void *buf, size_t nbyte, bool sync_flag = false);
+int os_fsync(int fd);
 
 #endif
