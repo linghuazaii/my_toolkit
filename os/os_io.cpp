@@ -46,3 +46,29 @@ int os_fsync(int fd) {
 
     return res;
 }
+
+int os_fgetc(FILE *stream) {
+    int res = fgetc(stream);
+    if (res == EOF)
+        perror("fgetc()");
+
+    return res;
+}
+
+int os_ungetc(int c, FILE *stream) {
+    int res = ungetc(c, stream);
+    if (res == EOF)
+        perror("ungetc()");
+
+    return res;
+}
+
+char *os_fgets(char *s, int size, FILE *stream) {
+    char *buf = fgets(s, size, stream);
+    if (buf == NULL)
+        perror("fgets()");
+
+    return buf;
+}
+
+
