@@ -18,6 +18,10 @@ echo \
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#include <sys/uio.h>
+#include <sys/mman.h>
+#include <sched.h>
+#include <malloc.h>
 using namespace std;
 
 int main(int argc, char **argv) {
