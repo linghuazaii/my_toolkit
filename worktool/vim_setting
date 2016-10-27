@@ -12,6 +12,7 @@ set cindent
 set mouse=a
 set incsearch
 set hlsearch
+set scrolloff=999
 inoremap [ []<ESC>i
 inoremap { {}<ESC>i<CR><UP><END><CR>
 inoremap " ""<ESC>i
