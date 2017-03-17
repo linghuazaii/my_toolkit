@@ -22,6 +22,11 @@ echo \
 #include <sys/mman.h>
 #include <sched.h>
 #include <malloc.h>
+#include <sys/socket.h>
+#include <sys/time.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <netinet/tcp.h>
 using namespace std;
 
 int main(int argc, char **argv) {
