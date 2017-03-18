@@ -8,10 +8,15 @@ section .text
 global _start
 _start:
     nop ; make gdb happy
-    ; put your experiments here
+    ; put your experiments between these nop
 
-    ; put your expeirments here
+    ; put your expeirments between these nop
     nop ; make gdb happy
+    
+    ; exit 
+    mov eax,60 ; system call 60: exit
+    xor edi, edi ; set exit status to zero
+    syscall ; call the operating system
 
 section .bss
 ' >$1
