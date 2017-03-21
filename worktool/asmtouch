@@ -13,6 +13,7 @@ _start:
     ; put your expeirments between these nop
     nop ; make gdb happy
     
+EXIT:
     ; exit 
     mov eax,60 ; system call 60: exit
     xor edi, edi ; set exit status to zero
